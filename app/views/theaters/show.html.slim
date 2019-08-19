@@ -1,0 +1,9 @@
+.show-theater
+  br
+  .container
+    - @dates.each do |date|
+      .col-md-2
+        .card
+          = link_to date, {controller: "static_pages", action: "schedule", theater: @theater.id,
+            date: date }, remote: true, class: "btn btn-light text-muted date"
+  #current_date

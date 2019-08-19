@@ -1,0 +1,35 @@
+header#gtco-footer data-stellar-background-ratio="0.5" role="contentinfo" 
+  nav.gtco-nav role="navigation" 
+    .gtco-container
+      .row
+        .col-sm-4
+          #gtco-logo
+            = link_to root_path, class: "cursive-font"
+              = t ".web_name"
+        .col-sm-3
+          ul
+            li
+              = search_form_for(@search, url: movies_path) do |f|
+                label
+                  = f.search_field :name_cont, placeholder: t(".search"), class: "search-input"
+                  = button_tag(type: 'submit', class: "search-top-bar-submit", id: 'search-top-bar-submit') do
+                    span.fa.fa-search
+        .col-sm-5
+          ul.nav-menu.lgo-btn
+            li
+              = link_to cities_path
+                = t (".city")
+            - if current_user
+              li
+                = link_to user_path(current_user)
+                  = t (".profile") 
+              li
+                = link_to orders_path
+                  = t ".history"
+              li
+                = link_to destroy_user_session_path, method: :delete
+                  = t(".logout")
+            - else
+              li.btn-cta
+                = link_to user_session_path 
+                  span = t ".signin"

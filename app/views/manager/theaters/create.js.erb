@@ -1,0 +1,5 @@
+$("#theater").DataTable().clear().destroy();
+$("#theater-table").html("<%= j render partial: 'theater', collection: @theaters %>");
+$("#myModalNew").modal("hide");
+initDataTableTheater();
+toastr["success"]('<%= t(".success") %>');

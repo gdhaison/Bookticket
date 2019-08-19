@@ -1,0 +1,23 @@
+.limiter
+  .container-login100 style=("background-image: url('images/bg-01.jpg');") 
+    .wrap-login100
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        span.login100-form-logo
+          i.fab.fa-accusoft aria-hidden="true" 
+        span.login100-form-title.p-b-34.p-t-27
+          | Well come
+        .wrap-input100.validate-input data-validate=("Enter Email") 
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "input100", placeholder: "Email"
+          span.focus-input100 
+            i.fas.fa-envelope.fa-2x
+        .wrap-input100.validate-input data-validate=("Enter password")
+          = f.password_field :password, autocomplete: "current-password", class: "input100", placeholder: "Password"
+          span.focus-input100 
+            i.fas.fa-unlock-alt.fa-2x
+        .contact100-form-checkbox
+          -if devise_mapping.rememberable?
+            = f.check_box :remember_me
+            | &emsp;
+            = f.label :remember_me, id: "checkbox"
+        .container-login100-form-btn
+          = f.submit "Log in", class: "login100-form-btn"

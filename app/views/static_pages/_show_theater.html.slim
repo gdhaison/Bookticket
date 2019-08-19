@@ -1,0 +1,9 @@
+- @theaters.each do |theater|
+  .col-md-3
+      .card
+        = link_to theater.name,{controller: "static_pages", 
+                                action: "show_showtime",
+                                theater: theater.id, 
+                                movie: params[:movie], 
+                                date: params[:date]}, 
+                                remote: true, class: "btn btn-light text-muted date"

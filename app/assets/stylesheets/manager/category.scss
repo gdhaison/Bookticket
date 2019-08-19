@@ -1,0 +1,49 @@
+input[type="submit"]{
+  margin-top: 20px;
+}
+h1{
+  margin-bottom: 20px;
+}
+
+.new-category, .edit-category{
+  margin-top: 15px;
+}
+
+.index-categories{
+  margin-top: 15px;
+  div#dataTable_wrapper {
+    width: 100% !important;
+  }
+  div#category_filter input {
+    border: 1px solid !important;
+    border-radius: 5px !important;
+  }
+  table{
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    overflow: hidden;
+    td, th{
+      padding: 20px !important;
+    }
+    thead{
+      background: #3057c9;
+      color: #fff;
+    }
+    tbody{
+      tr:nth-child(even){
+        background: #e2e2e2;
+      }
+      a{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+ul.pagination {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.import-data{
+  margin-top: 20px;
+}

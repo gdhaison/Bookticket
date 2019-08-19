@@ -1,0 +1,5 @@
+$("#showtimeModal").html("<%= j render 'edit', movie_theater: @movie_theater, abd: @support_movie_theater, theater: @theater, room: @theater.rooms %>");
+$("#showtimeModalEdit").modal("show");
+var rooms = $('#movie_theater_room_id').html();
+myGetrooms(rooms);
+jQuery('#datetimepicker').datetimepicker();

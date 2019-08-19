@@ -1,0 +1,33 @@
+= link_to t(".startScan"), new_manager_scanner_path, remote: true, id: "btnStart", class: "btn btn-danger ml-4"
+= audio_tag "beep", type: "audio/mp3", id: "beep"
+.container-fluid
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        = t(".all")
+    .card-body
+      .table
+        #dataTable_wrapper.dataTables_wrapper.dt-bootstrap4
+          .row
+            .col-sm-12
+              table#theater.table.table-bordered.dataTable.table-striped.table-hover
+                thead#theater-t
+                  tr role="row"
+                    th.sorting style="width: 5%;" 
+                      = t(".id")
+                    th.sorting style="width: 25%;" 
+                      = t(".name")
+                    th.sorting style="width: 20%;" 
+                      = t(".city-theater")
+                    th.sorting style="width: 10%;" 
+                      = t(".status")
+                    th.sorting style="width: 50px;" 
+                      = t(".time")
+                    th style="width: 20%;"
+                      = t(".action")                                        
+                tbody#theater-table
+                  = render @orders          
+            .col-sm-12.col-md-7
+              #dataTable_paginate.dataTables_paginate.paging_simple_numbers
+#myReader
+#myIndex

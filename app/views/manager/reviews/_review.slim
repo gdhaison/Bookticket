@@ -1,0 +1,8 @@
+tr
+  td
+    = review.user.name
+  td
+    = review.rate
+  td
+    = link_to t(".delete"),manager_review_path(review),method: :delete,
+            data: {confirm: t(".AYS")}, class: "btn btn-danger"  

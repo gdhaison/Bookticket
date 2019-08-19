@@ -1,0 +1,32 @@
+#index-city.success
+  .row
+    h2#you-success
+      = t ".success"
+    .ticket__content#successful
+      .text-center
+        p#name_email
+          = t(".name")
+          = @order.user.name
+          br
+          = t(".email: ") 
+          = @order.user.email
+      br
+      .col-lg-3
+        table
+          tr
+            td = t(".movie")  
+            td = @order_items.first.movie_theater.movie.name
+          tr
+            td = t(".showtime")  
+            td = @order_items.first.movie_theater.time.strftime(Settings.format_time)
+          tr
+            td = t(".seat")  
+            td 
+              - @order.order_items.each do |ot|
+                span = ot.seat.name 
+            end
+          tr
+            td = t(".total")  
+            td = number_to_currency(@order.total)
+  = form_tag payment_path, method: :post do
+    = submit_tag t(".pay"), class: "btn btn-primary", id:"success-payment"

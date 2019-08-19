@@ -1,0 +1,20 @@
+#myModalEdit.modal.fade aria-hidden="true" aria-labelledby="myLargeModalLabel"
+   .modal-dialog.modal-dialog-centered.modal-lg
+    .modal-content.center
+      .modal-header
+        h2 = t (".title")
+        button#close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  ×
+      .modal-body
+        = form_for [:manager, @theater], remote: true do |f|
+          = render "shared/error_messages", object: f.object
+          .form-group
+            = f.label :name
+            = f.text_field :name, class: "form-control"
+          .form-group
+            = f.label :city
+            br
+            = f.select(:city_id, City.pluck(:name, :id))
+          .form-group
+            = f.submit t(".button"), id: "save", remote: true, class: "btn btn-info add-new-theater"
+            br

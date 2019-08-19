@@ -1,0 +1,9 @@
+= link_to manager_check_read_path(notification), id: "#{notification.read}"
+  .dropdown-item 
+    li
+      | #{notification.id} 
+      = notification.event
+      span
+        = notification.created_at.utc.localtime.strftime("%d/%m/%Y, %H:%M")
+    h6#text.far.fa-arrow-alt-circle-right
+      |  #{t(".check")}

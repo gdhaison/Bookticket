@@ -1,0 +1,20 @@
+.container1
+  .col-md-3
+    = image_tag @movie_theater.movie.image.url
+  .col-md-3
+    h5 
+      strong
+        = t ".name"
+      = @movie_theater.movie.name
+    h5 
+      strong
+        = t ".category"
+      = @movie_theater.movie.category.name
+    h5 
+      strong
+        = t ".rate"
+      = @movie_theater.movie.rated
+    .col-md-5
+      = link_to t(".trailer"), "" ,class: "btn btn-danger"
+    .col-md-3
+      = link_to t(".ticket"), "" , class: "btn btn-success"

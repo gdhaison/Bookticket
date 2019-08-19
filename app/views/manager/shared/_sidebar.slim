@@ -1,0 +1,50 @@
+ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+  = link_to manager_root_path, class: "sidebar-brand d-flex align-items-center justify-content-center"
+    .sidebar-brand-icon.rotate-n-15
+      i.fas.fa-user-tie
+    .sidebar-brand-text.mx-3
+      | Administrator
+  hr.sidebar-divider.my-0/
+  li.nav-item
+    = link_to manager_root_path , class: "nav-link"
+      i.fas.fa-fw.fa-tachometer-alt
+      span Dashboard
+  hr.sidebar-divider/
+  .sidebar-heading
+    | Management
+  li.nav-item
+    = link_to manager_orders_path, class: "nav-link collapsed" do
+      i.fas.fa-shopping-cart
+      span Orders
+  li.nav-item
+    = link_to manager_users_path, class: "nav-link"
+      i.fas.fa-fw.fa-tachometer-alt      
+      span Users 
+  li.nav-item
+    = link_to manager_movies_path, class: "nav-link collapsed" do
+      i.fas.fa-film 
+      span Movies
+  li.nav-item
+    = link_to manager_categories_path, class: "nav-link collapsed" do
+      i.fas.fa-book 
+      span Categories
+  li.nav-item
+    = link_to manager_rooms_path, class: "nav-link collapsed" do
+      i.fas.fa-book 
+      span Rooms
+  li.nav-item
+    = link_to manager_cities_path, class: "nav-link collapsed" do
+      i.fas.fa-globe 
+      span Cities
+    = link_to manager_theaters_path, class: " nav-link" do
+      i.fas.fa-film
+      span Theaters
+  li.nav-item
+    = link_to manager_movie_theaters_path, class: "nav-link collapsed" do
+      i.fas.fa-calendar
+      span Showtimes
+  li.nav-item
+    = link_to manager_reviews_path, class: "nav-link collapsed" do
+      i.fas.fa-comments
+      span Review
+  hr.sidebar-divider.d-none.d-md-block/

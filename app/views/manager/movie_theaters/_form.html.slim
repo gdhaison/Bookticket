@@ -1,0 +1,26 @@
+.modal-header
+  h2= t(".title")
+  button#close aria-label="Close" data-dismiss="modal" type="button"
+    span aria-hidden="true"
+      i.fas.fa-times
+.modal-body.movie-theater
+  = form_for [:manager, @movie_theater], html: { autocomplete: "off" }, remote: true do |f|
+    = render "shared/error_messages", object: f.object
+    .form-group
+      = f.label :time
+      = f.text_field :time, class: "form-control", id: "datetimepicker"
+    .form-group.box-select
+      = f.label :theater
+      br
+      = f.select :theater_id, @support_movie_theater.theaters
+    .form-group.box-select
+      = f.label :movie
+      br
+      = f.select :movie_id, @support_movie_theater.movies
+    #room_selection.form-group.box-select
+      = f.label :room
+      br
+      = f.grouped_collection_select :room_id, @support_movie_theater.all_theaters, :rooms, :name, :id, :name
+    .form-group
+      = f.submit "Submit", class: "btn btn-info"
+      br

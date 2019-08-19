@@ -1,0 +1,15 @@
+.col-md-2
+  = link_to movie, class: "fh5co-card-item image-popup"
+    figure
+      .overlay
+      - if !movie.image_file_name.nil?
+        = image_tag movie.image.url
+      - else 
+        = image_tag "https://image2.tin247.com/pictures/2019/07/05/baw1562286616.jpg"
+  .fh5co-text
+    = link_to movie_path(movie), id: "text"
+      = movie.name
+  .btn-ticket
+      = link_to movie_path(movie), class: "btn-text"
+        i.fas.fa-ticket-alt
+          |  #{t(".pur")}

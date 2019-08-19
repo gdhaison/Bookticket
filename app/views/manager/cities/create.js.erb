@@ -1,0 +1,3 @@
+$("#city-body").html("<%= j render partial: 'city', collection: @cities %>");
+$("#cityModalNew").modal("hide");
+toastr["success"]('<%= t(".success") %>');

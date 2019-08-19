@@ -1,0 +1,18 @@
+.border-bg
+  .line
+#gtco-header.gtco-cover.gtco-cover-md data-stellar-background-ratio="0.5" role="banner" style=("background-image: url(assets/download.jpg)")
+  .overlay
+  .gtco-container
+    .row
+      .col-md-12.col-md-offset-0.text-left
+        .row.row-mt-15em
+          .col-md-7.mt-text.animate-box data-animate-effect="fadeInUp"
+            h1.cursive-font = t ".slogan"
+.gtco-section style=("background-image: url(assets/galaxy.jpg)") 
+  .container2
+    .row
+      .col-md-8.col-md-offset-2.text-center.gtco-heading
+        h2.cursive-font.primary-color = t ".onstage"
+        p = t ".notice"
+    .multiple-items
+        = render partial: "movie", collection: @movies, as: :movie

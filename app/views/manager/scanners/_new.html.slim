@@ -1,0 +1,10 @@
+#scannerModalNew.modal.fade aria-hidden="true" aria-labelledby="myLargeModalLabel" role="dialog"
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h2 = t(".titleScanner")
+        button#close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"
+            i.fas.fa-times
+      .modal-body
+        #reader

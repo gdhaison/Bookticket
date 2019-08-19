@@ -1,0 +1,22 @@
+.show-room
+  table
+    tr
+      th
+      - (1..6).each do |col|
+        th
+          = "#{col}"
+    - id = 0
+    - ("A".."E").each do |row|
+      tr
+        td#first_col
+          = "#{row}"
+        - (1..6).each do
+          td.seat
+            = @seats[id][1]
+            br
+            |  Seat_id: 
+            = @seats[id][0]
+            br
+            |  Status: 
+            = @seats[id][2]
+          - id +=1

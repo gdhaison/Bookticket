@@ -1,0 +1,13 @@
+tr
+  td
+    = room.id
+  td
+    = room.name
+  td
+    = room.theater.name
+  td
+    = room.theater.city.name
+  td
+    = link_to t(".show"), manager_room_path(room), class: "btn"
+    = link_to t(".edit"), edit_manager_room_path(room), remote: true, class: "btn btn-primary mr-3"
+    = link_to t(".delete"), manager_room_path(room), method: :delete, data: { confirm: t(".confirm")}, class: "btn btn-danger"

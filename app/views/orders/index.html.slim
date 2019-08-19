@@ -1,0 +1,22 @@
+.index-orders
+  .container
+    h2 = t(".title")
+    - @orders.each do |order|
+      .row
+        .col-md-2
+          - if order.order_items.first.movie_theater.movie.image.blank?
+            = image_tag "toy.jpg"
+          - else
+            = image_tag src=order.order_items.first.movie_theater.movie.image.url
+        .col-md-10
+          p.title = order.order_items.first.movie_theater.movie.name
+          p = order.order_items.first.movie_theater.movie.rated
+          p = order.order_items.first.movie_theater.time.strftime(Settings.format_time)
+          p = order.order_items.first.movie_theater.theater.name
+          p = order.order_items.first.movie_theater.room.name
+          - order.order_items.each do |ot|
+            span = ot.seat.name 
+          br
+          strong = order.total
+      hr
+    = paginate @orders, theme: "twitter-bootstrap-4"

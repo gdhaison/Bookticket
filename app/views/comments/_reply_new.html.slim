@@ -1,0 +1,11 @@
+= form_for @reply, remote: true do |f|
+  = f.hidden_field :parent_id, value: params[:comment].to_i
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :movie_id, value: params[:movie].to_i
+  center
+    = f.label :Reply, t(".reply")
+    .form-group
+      = f.text_area :content, class: "form-comment",id: "content-rep", required: true
+  center
+    .btn-cmt
+      = f.submit t(".btn"), class: "btn btn-primary"

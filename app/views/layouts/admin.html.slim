@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    = action_cable_meta_tag 
+    = stylesheet_link_tag "manager/application", media: "all"
+    = javascript_include_tag "manager/application"
+  body
+    body#wrapper
+      = render "manager/shared/sidebar"
+      #content-wrapper.d-flex.flex-column
+        #content
+          = render "manager/shared/header", notifications: @notifications
+          - flash.each do |f|
+            - type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info')
+            javascript:
+              toastr["#{type}"]("#{f[1]}")
+          = yield
+        footer.sticky-footer.bg-white
+          = render "manager/shared/footer"

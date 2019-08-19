@@ -1,0 +1,8 @@
+amount_movie_index: 8
+per_page_categories: 5
+per_page_cities: 10
+per_page_rooms: 5
+per_page_movies: 10
+per_page_movie_theaters: 6
+per_page_orders: 5
+format_time: "%d/%m %H:%M"

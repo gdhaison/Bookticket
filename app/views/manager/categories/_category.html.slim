@@ -1,0 +1,6 @@
+tr
+  td = category.name
+  td
+    = link_to t(".edit"), edit_manager_category_path(category), remote: true, class: "btn btn-primary"
+    = link_to t(".delete"), manager_category_path(category),                    
+      method: :delete, data: { confirm: t(".confirm")}, class: "btn btn-danger" 

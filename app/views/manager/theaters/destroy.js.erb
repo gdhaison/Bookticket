@@ -1,0 +1,4 @@
+$('.theater_delete').bind('ajax:success', function() {
+  $(this).closest('tr').fadeOut();
+});
+toastr["info"]('<%= t(".deleted") %>');

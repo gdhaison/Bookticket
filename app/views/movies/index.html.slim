@@ -1,0 +1,14 @@
+- @results.each do |result|
+  #show-movie  
+    .bg-img
+      .container
+          .col-md-4
+            - if result.image_file_name.present?
+              = image_tag result.image.url
+            - else 
+              = image_tag "/assets/toy.jpg" 
+          .col-md-8
+            strong
+              p
+                = "#{result.name}"
+              = link_to t(".details"), movie_path(result), class: "btn btn-info btn-sm"

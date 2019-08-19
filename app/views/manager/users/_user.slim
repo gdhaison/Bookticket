@@ -1,0 +1,16 @@
+tr
+  td
+    = user.name
+  td
+    = user.email
+  td
+    = user.full_name
+  td
+    = user.phone_number
+  td
+    = user.address
+  td
+    - if user.deactivated == false
+      = link_to t(".lock"), manager_user_path(user), remote: :true, data: { confirm: t(".confirm")}, method: :patch, class: "btn btn-danger"
+    - else
+      = link_to t(".unlock"), manager_user_path(user), remote: :true, data: { confirm: t(".sure")}, method: :patch, class: "btn btn-success"

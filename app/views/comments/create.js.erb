@@ -1,0 +1,5 @@
+$("#comment1").html("<%= j(render partial: 'comments/comment', collection: @support.find_comment(@movie), as: :comment) %>");
+$("#new_comment").html("<%= escape_javascript(render partial: 'comments/new' ) %>");
+$("#reply").html("");
+$("#content-cmt").val("");
+$("#content-rep").val("");

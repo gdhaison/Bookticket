@@ -1,0 +1,36 @@
+.container.index-categories
+  h1 = t".title"
+  //Add new
+  = link_to t(".button"), new_manager_category_path, remote: true, class: "btn btn-success"
+
+  //DataTable
+  .table
+  #dataTable_wrapper.dataTables_wrapper
+    .row
+      .col-sm-12.col-md-6
+        #dataTable_length.dataTables_length
+      .col-sm-12.col-md-6
+        #dataTable_filter.dataTables_filter
+    br
+    table#category.table.table-bordered.dataTable.table-striped.table-hover
+      thead#category-t
+        tr role="row"
+          th.sorting 
+            = t(".name")
+          th 
+            = t(".action")                                        
+      tbody#category-body
+        = render @categories
+
+  //Import data
+  .import-data
+    = form_tag importfile_imports_path, multipart: true
+      = file_field_tag :file, accept: "text/csv"
+      = submit_tag t(".import"), class: "btn btn-info btn-sm"
+      
+  //Export data
+  = link_to manager_categories_path(format: :csv), class: "btn btn-primary download-file" do
+    i.fa.fa-download
+      span = t(".download")
+
+#categoryIndexModal

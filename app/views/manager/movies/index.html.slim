@@ -1,0 +1,17 @@
+= link_to new_manager_movie_path , remote: true, class: "btn btn-success" do
+    = t(".new_movie")
+table.table.table-condensed
+    thead
+      tr
+        th = t".name"
+        th = t".category"
+        th = t".created_at"
+        th = t".trailer"
+        th = t".image"
+        th = t".update"
+        th = t".delete"
+    tbody#movie-body
+      = render @movies       
+    table
+    = paginate @movies, theme: "twitter-bootstrap-4"
+#myModalIndex

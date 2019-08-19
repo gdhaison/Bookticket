@@ -1,0 +1,27 @@
+.container-fluid
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        = t(".all")
+row
+  .col-sm-12
+    table.table.table-striped
+      thead
+        tr[role="row"]
+          th.sorting_asc[style="width: 20px;"]
+            = t(".name")
+          th.sorting[style="width: 70px;"]
+            = t(".fulln")
+          th.sorting[style="width: 70px;"]
+            = t(".email")
+          th.sorting[style="width: 70px;"]
+            = t(".phone")
+          th.sorting[style="width: 70px;"]
+            = t(".addr")
+          th.sorting[style="width: 70px;"]
+            = t(".act")
+      tbody#users 
+        = render @users
+  .col-sm-12.col-md-7
+    #dataTable_paginate.dataTables_paginate.paging_simple_numbers
+      = paginate @users

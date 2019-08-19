@@ -1,0 +1,37 @@
+.col-md-9.col-md-offset-3
+  = form_for [:manager, @movie], remote: true do |f|
+    = render "shared/error_messages", object: f.object
+    .field
+      = f.label :name, t(".name")
+      = f.text_field :name, class: "form-control"
+    hr
+    .field
+      = f.label :aivailable, t(".available")
+      = f.check_box :available
+    .field
+      = f.label :category_id
+    .field.box-select
+      = f.select(:category_id, @categories.pluck(:name, :id), include_blank: t(".select"))
+    br
+    .field
+      = f.label :director, t(".director")
+      = f.text_field :director, class: "form-control"
+    .field
+      = f.label :actor, t(".actor")
+      = f.text_field :actor, class: "form-control"
+    .form-group
+      = f.label :release
+      = f.text_field :release, class: "form-control", id: "datetimepicker", autocomplete: :off 
+    .field
+      = f.label :rated, t(".rated")
+      = f.text_field :rated, class: "form-control"
+    .field
+      = f.label :trailer, t(".trailer")
+      = f.text_field :trailer, class: "form-control"
+    .field
+      = f.label :description, t(".descrip")
+      = f.text_field :description, class: "form-control"
+    .field
+      = f.label :image, t(".image")
+      = f.file_field :image, class: "form-control"
+    = f.submit yield(:button_text), class: "btn btn-primary"

@@ -1,0 +1,592 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-page .form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.login-page .form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: black
+}
+.login-page .form input::placeholder {
+  color: #333;
+}
+.login-page .form .btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.login-page .form .btn:hover,.form .btn:active,.form .btn:focus {
+  background: #43A047;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+.content-1 {
+  width: 39%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 35px !important;
+}
+
+.change_profile {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+.container.details {
+  padding-bottom: 65px;
+}
+
+.form-group.col-md-12 {
+  color: black;
+}
+
+.container#form-group {
+  max-width: 150%;
+}
+
+.login-page .remember-me{
+  display: flex;
+}
+
+.login-page .remember-me input[type="checkbox"] {
+  width: 39px !important;
+  margin-top: 12px !important;
+}
+
+.fa.fa-search {
+  position: absolute;
+  top: 16%;
+  z-index: 1;
+  color: #909ba5;
+  right: 88%;
+  font-size: 21px;
+}
+
+label#remember {
+  color: black;
+}
+
+.color-555 {
+  color: #555;
+}
+/// OrderItems new User
+.show-room {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.show-room table{
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.order-item-page .show-room table tr {
+  .seat, td {
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: red;
+    text-align: center;
+    color: black;
+    label{
+      width: 100%;
+      height: 100%;
+      font-size: 1em;
+      margin-bottom: 0px;
+      color: #727680;
+      cursor: pointer;
+    }
+    input{
+      display: none;
+    }
+  }
+}
+
+.show-room {
+  .seat {
+    cursor: pointer;
+    color: gray;
+  }
+}
+
+.show-room #first_col, 
+.show-room th {
+  border-style: none;
+  color: #fff !important;
+  font-size: 1em;
+  height: 100%;
+}
+.container label {
+  color: black;
+}
+
+#comment {
+  background-color: rgb(232, 232, 239);
+  width: 100% !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 114px;
+  color: black;
+}
+
+.submit {
+  background-color: #F44336;
+}
+
+.container1{
+  margin-left: 2cm;
+  margin-top: 36px;
+}
+
+a.btn.btn-light.text-muted.date {
+  margin-left: 4px;
+  margin-top: 4px;
+  color: #030303;
+}
+
+.order-item-page h2 {
+  font-family: sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.order-item-page .screen {
+  font-family: cursive;
+  color: rgb(66, 54, 54);
+  line-height: 1;
+  text-align: center;
+  background-color: gray;
+  border: solid 0.5px gray;
+  width: 430px;
+  height: 30px;
+  margin-left: 200px;
+  font-size: x-large;
+}
+
+.order-item-page input {
+  width: 30%;
+}
+
+.seat-status {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  .seat-checked{
+    border-radius: 3px;
+    background-color: brown;
+    width: 30px;
+    height: 30px;
+  }
+  .seat-free {
+    border-radius: 3px;
+    background-color: blanchedalmond;
+    width: 30px;
+    height: 30px;
+  }
+  .seat-picked {
+    border-radius: 3px;
+    background-color: #bcbcbc;
+    width: 30px;
+    height: 30px;
+  }
+  span {
+    margin: 0px 20px 0px 5px;
+    font-family: sans-serif;
+  }
+}
+
+.container2{
+  max-width: 1250px;
+  position: relative;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.fh5co-text {
+  height: 100px;
+  text-align: center;
+  a{
+    color: #45ab3d !important; 
+    font-weight: bold;
+    text-shadow: 0.1em 0.1em 0.2em #000; 
+  }
+}
+
+.btn-ticket{
+  text-align: center;
+  border-radius: 5px;
+  a{
+    color: #fff !important;
+    font-size: 15px !important;
+    padding: 10px 25%;
+    background: #45ab3d;
+    border-radius: 5px;
+    &:hover{
+      color: #45ab3d !important;
+      background: #f8f8f8;
+      border: 1.5px solid #45ab3d ;
+    }
+  }
+
+}
+
+.fh5co-card-item {
+  margin-bottom: 10px !important;
+}
+
+.gtco-section {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.gtco-nav {
+  border-bottom: none !important;
+  input{
+    padding: 1px 50px !important;
+  }
+  ul.nav-menu{
+    margin-top: 10px !important;
+  }
+}
+.gtco-quick-contact a{
+  color: #fbb448 !important;
+}
+
+.lgo-btn{
+  float: right;
+}
+header#gtco-footer{
+  background-image: url(space.jpg);
+  background-size: contain;
+}
+footer#gtco-footer{
+  background-image: url(bg-grid.jpg);
+}
+.border-bg{
+  background: #02121d;
+}
+.line {
+  width: 30%;
+  border-radius: 10px;
+  height: 3px; 
+  position :relative;
+  -webkit-animation: mymove 6s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 10s infinite;
+}
+@keyframes mymove {
+  0% {left: 0px;background: #02121d;}
+  25% {left: 40%;background: white;}
+  50% {left: 70%;background: #02121d;}
+  75% {left: 30%;background: white;}
+  100% {left: 0px;background: #02121d;}
+}
+
+.search-input{
+  background-color: white;
+  color: black;
+}
+
+.bg-img{
+  background-image: url(star.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 60px;
+}
+
+#show-movie{
+  .container{
+    width: 60%;
+    background: none !important;
+    box-shadow: none !important;
+    margin-top: 0px;
+    padding-top: 20px;
+    p{
+      font-size: 20.65px;
+      color: white;
+      text-shadow: 0.1em 0.1em 0.2em #000; 
+    } 
+  }
+  h1{
+    font-size: 43px;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.2em #000; 
+  }
+  #des{
+    margin-bottom: 10px;
+  }
+  #review-form{
+    label{
+      color: white;
+      text-shadow: 0.1em 0.1em 0.2em #000; 
+    }
+  }
+  .hang{
+    margin-top: 10px;
+    text-align: center;
+    a{
+      margin: 0 5px;
+    }
+  }
+}
+
+#review-form{
+  .container{
+    padding-top: 0px !important;
+  }
+}
+
+#reviews{
+  .container{
+    border-top: 1px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
+  }
+}
+
+#show-movie  {
+  #text1{
+    .container{
+      padding: 10px !important;
+    }
+  }
+}
+
+.order-item-page .picked {
+  background-color: #bcbcbc;
+}
+.order-item-page .picked {
+  label{
+    cursor: not-allowed !important;
+  }
+  &:hover{
+    background-color: #bcbdbc !important;
+  }
+}
+#index-city{
+  background-image: url('star.jpg');
+  height: 590px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .list-group-item > .badge {
+    float: right;
+    margin-right: 29px;
+  }
+  .color-555 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .align-items-center {
+    border: none !important;
+    background: none;
+  }
+  .card{
+    background: none;
+    border: none;
+  }
+  h2{
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .city-info{
+    .list-group-item:hover{
+      background:   !important;
+      border-radius: 10px;
+      a{
+        color: #fff;
+        text-shadow: none;
+      }
+    }
+  }
+  .city-info, .theater-info {
+    width: 80%;
+    margin: auto;
+    padding-top: 71px;
+  }
+
+  #theaters {
+    margin-top: 80px;
+    border-top: 3px solid #a29898;
+    padding-top: 25px;
+    h4{
+      float: left;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .text-truncate.btn-choose-cinema{
+      background: none;
+      border: none;
+      a{
+        color: #fff;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+.show-theater{
+  background-image: url('star.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .container{
+    background: none;
+  }
+  .card{
+    margin-bottom: 15px;
+    background: none;
+    border: none;
+  }
+  .btn-outline-dark.is-ticketing{
+    background: #fff
+  }
+  a:first-child{
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.order-item-page{
+  background-image: url('star.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  h1, h2, span, td{
+    color: #fff;
+  }
+  form.new_order{
+    text-align: center;
+  }
+  input#booking{
+    margin: 20px auto !important;
+  }
+}
+
+.col-lg-3 {
+  float: none;
+  margin: 0 auto;
+}
+
+div#index-city.file {
+  height: 382px;
+}
+div#index-city.fileter {
+  height: 680px;
+}
+
+div#index-city.payment {
+  height: 300px;
+}
+
+div#index-city.success {
+  height: 570px;
+}
+
+input#success-payment {
+  width: 70%;
+  margin-left: 184px;
+}
+
+.comment_nested{
+  margin-left: 20px;
+}
+
+.form-comment{
+  box-shadow: none;
+  background: transparent;
+  border: 3px solid rgba(253, 2, 2, 0.1);
+  border-radius: 5px;
+  color: black;
+  height: 60px;
+  width: 500px; 
+  font-size: 16px;
+  font-weight: 300;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  color: #fff !important;
+  border: 2px solid rgba(229, 255, 0, 0.2);
+}
+.btn-cmt{
+  width: 500px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slick-slide img {
+   height: 431px;
+}
+
+.ticket__content#successful {
+  color: white;
+  border-top-width: 0px;
+  border-bottom-width: 0px
+}
+
+#name_email {
+  color: wheat;
+  font-size: 30px;
+}
+
+#you-success {
+  margin-left: 40px;
+}
+
+blockquote{
+  margin-bottom: 0 !important
+}
+
+.toast-message {
+   font-size: 15px;
+}

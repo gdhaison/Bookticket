@@ -1,0 +1,5 @@
+- @movie_theaters.each do |showtime|
+  .col-md-2
+      .card
+        = link_to new_order_path(movie_theater_id: showtime.id), class: "btn btn-light text-muted date" do
+          span = showtime.time.strftime("%H:%M")

@@ -1,0 +1,57 @@
+#show-movie
+  .bg-img
+    .container
+      .col-md-4
+        - if !@movie.image_file_name.nil?
+          = image_tag @movie.image.url
+        -else
+          = image_tag "https://image2.tin247.com/pictures/2019/07/05/baw1562286616.jpg"
+        .hang
+          = link_to t(".trailer"),@movie.trailer, class: "btn btn-danger popup-link"
+          = link_to t(".bok"), {controller: "static_pages", action: "date", movie: @movie.id }, remote: true, class: "btn btn-success"
+      .col-md-8
+        h1
+          strong
+            = @movie.name
+        p
+          = t ".director"
+          = @movie.director
+        p
+          = t ".category"
+          = @movie.category.name
+        p
+          = t ".actor"
+          = @movie.actor
+        p
+          = t ".release"
+          = @movie.release.utc.localtime.strftime("%d/%m/%Y")
+        p
+          = t ".rated"
+          = @movie.rated
+        p
+          = t ".descrip"
+          =@movie.description
+    .container
+      #date_movie
+    .container
+      #city_movie
+    .container
+      #show_theater
+    .container
+      #show_showtime
+    .container
+      #show_rate
+        - if current_user != nil
+          = render @support.rate(@movie, current_user)
+    #review-form
+      = render "reviews/form", review: @review
+    center
+      .col-9
+        #new_comment
+          = render "comments/new"
+    center
+      .col-9
+        #reply
+    .col-9
+      #comment1
+        = render @support.find_comment(@movie)

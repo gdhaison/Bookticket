@@ -1,0 +1,6 @@
+tr
+  td = city.name
+  td
+    = link_to t(".edit"), edit_manager_city_path(city), remote: true, class: "btn btn-primary"
+    = link_to t(".delete"), manager_city_path(city),                    
+      method: :delete, data: { confirm: t(".confirm")}, class: "btn btn-danger" 

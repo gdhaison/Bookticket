@@ -1,0 +1,5 @@
+$("#movie_theater").DataTable().clear().destroy();
+$("#showtime-body").html("<%= j render partial: "movie_theater", collection: @movie_theaters %>");
+$("#showtimeModalEdit").modal("hide");
+initDataTableMovieTheater();
+toastr["success"]('<%= t(".success") %>');

@@ -1,0 +1,17 @@
+$("#review-list").html("<%= j render partial: "reviews/review", collection: @reviews, as: :review %>");
+toastr["info"]('<%= t(".deleted") %>');
+$('.star-rating').raty({
+  path: '/assets/',
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});
+$('#star-rating').raty({
+  path: '/assets/',
+  scoreName: 'review[rate]'
+});
+<%if @reviews.size == 0%>
+  $("#review-list").html("<p>There are no reviews yet</p>");
+  $("#review-form").html("<%= j render "reviews/form", review: @movie.reviews.build %>");
+<%end%>

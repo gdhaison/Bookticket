@@ -1,0 +1,32 @@
+.container-fluid
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        = t(".all")
+    .card-body
+      .table
+        #dataTable_wrapper.dataTables_wrapper.dt-bootstrap4
+          = link_to new_manager_theater_path , remote: true, class: "btn btn-success" do
+            = t(".new")
+          .row
+            .col-sm-12.col-md-6
+              #dataTable_length.dataTables_length
+            .col-sm-12.col-md-6
+              #dataTable_filter.dataTables_filter
+          br
+          .row
+            .col-sm-12
+              table#theater.table.table-bordered.dataTable.table-striped.table-hover
+                thead#theater-t
+                  tr role="row"
+                    th.sorting style="width: 60px;" 
+                      = t(".name")
+                    th.sorting style="width: 150px;" 
+                      = t(".city")
+                    th style="width: 30%;"
+                      = t(".action")                                        
+                tbody#theater-table
+                  = render @theaters          
+            .col-sm-12.col-md-7
+              #dataTable_paginate.dataTables_paginate.paging_simple_numbers
+#myModalIndex

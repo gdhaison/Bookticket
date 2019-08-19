@@ -1,0 +1,122 @@
+.fa-2x {
+  font-size: 2em;
+  color: #f7f6f5;
+}
+
+div#theater_filter input {
+  border: 1px solid !important;
+  border-radius: 5px !important;
+}
+
+div#dataTable_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#theater-t {
+  background-color: #3058c9;
+  color: #ffff;
+}
+
+
+label#checkbox {
+  color: white;
+}
+.show-room table{
+  border-collapse: separate;
+  border-spacing: 10px;
+  caption {
+    text-align: center;
+  }
+}
+
+.show-room tr, 
+.show-room td {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: red;
+  text-align: center;
+  color: black;
+}
+
+.show-room .seat:hover {
+  background-color: aqua;
+  color: gray;
+}
+
+.show-room #first_col, 
+.show-room th {
+  border-style: none;
+  color: black;
+}
+.container label {
+  color: black
+}
+
+.chart-index{
+  width: 70%;
+  margin: 0 auto 70px auto;
+  h3{
+    text-align: center;
+  }
+}
+
+.index-categories i{
+  margin-right: 10px;
+}
+
+.sidebar{
+  width: 18rem !important;
+  overflow-y: scroll;
+}
+
+.download-file{
+  margin-bottom: 15px;
+}
+
+#reader {
+  width: 500px;
+  height: 400px;
+  z-index: 100;
+  margin: auto;
+}
+
+#notification-counter {
+  background-color: rgb(212, 78, 3);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font: 13px Verdana;
+  position: absolute;
+  right: 14%;
+  top: 20%;
+}
+
+div#notificationsBody {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+a#false .dropdown-item {
+    background: #02020214;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a#userDropdown {
+    position: relative;
+}
+
+h6#text {
+  color: blue;
+}
+
+div#notificationTitle {
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #e4dbdbed;
+}

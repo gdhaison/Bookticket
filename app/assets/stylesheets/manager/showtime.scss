@@ -1,0 +1,51 @@
+.box-select select {
+  background-color: #5797ccdb;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border-radius: 5px;
+  option {
+    padding: 30px;
+  }
+}
+.movie-theater label{
+  color: #333;
+}
+
+#showtime-body a{
+  margin-right: 10px;  
+}
+
+.index-showtimes{
+  margin-top: 15px;
+  div#dataTable_wrapper {
+    width: 100% !important;
+  }
+  div#movie_theater_filter input {
+    border: 1px solid !important;
+    border-radius: 5px !important;
+  }
+  table{
+    border-collapse: collapse;
+    overflow: hidden;
+    td, th{
+      padding: 20px !important;
+    }
+    thead{
+      background: #3057c9;
+      color: #fff;
+    }
+    tbody{
+      tr:nth-child(even){
+        background: #e2e2e2;
+      }
+      a{
+        margin-right: 10px;
+      }
+    }
+  }
+}

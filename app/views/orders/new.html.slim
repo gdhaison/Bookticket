@@ -1,0 +1,51 @@
+.order-item-page
+  h1
+    = t(".title")
+  br
+  h1
+    = @movie_theater.movie.name
+  br
+  h2
+    = @movie_theater.room.theater.city.name
+    | |
+    = @movie_theater.room.theater.name
+    | |
+    = @movie_theater.room.name
+    | |
+    = @movie_theater.time.strftime("%d/%m/%Y, %H:%M")
+  .show-room
+    .screen
+      = t(".screen")
+    = form_for @order do |f|
+      = render "shared/error_messages", object: f.object
+      table
+        tr
+          th
+          - (1..6).each do |col|
+            th
+              = "#{col}"
+        - id = 0
+        - ("A".."E").each do |row|
+          tr
+            td#first_col
+              = "#{row}"
+            - (1..6).each do
+              - if @picked_seat_array.exclude? @seats[id][0]
+                = render "seat_active", f: f, id: id
+              - else
+                = render "seat_picked", f: f, id: id
+              - id +=1
+      .seat-status
+        .seat-checked
+        span
+          = t(".lblChecked")
+        .seat-free
+        span
+          = t(".lblFree")
+        .seat-picked
+        span
+          = t(".lblPicked")
+      = f.hidden_field :total, value: 0
+      = f.hidden_field :user_id, value: current_user.id
+      = f.submit t(".booking"), id: "booking", class: "btn btn-primary"
+

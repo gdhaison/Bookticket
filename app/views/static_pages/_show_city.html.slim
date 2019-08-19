@@ -1,0 +1,9 @@
+- @cities.each do |city|
+  .col-md-2
+      .card
+        = link_to city.name,{controller: "static_pages",
+                             action: "show_theater", 
+                             city: city.id, 
+                             movie: params[:movie], 
+                             date: params[:date]}, 
+                             remote: true, class: "btn btn-light text-muted date"

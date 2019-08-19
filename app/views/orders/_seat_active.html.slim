@@ -1,0 +1,5 @@
+td.seat
+  = f.fields_for :order_items do |ff|
+    = ff.hidden_field :movie_theater_id, value: @movie_theater.id
+    = ff.label :seat_id, "#{@seats[id][1]}"
+    = ff.check_box :seat_id, {}, @seats[id][0], nil

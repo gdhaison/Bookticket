@@ -1,0 +1,9 @@
+.chart-index
+  h3 = t(".user")
+  = line_chart User.group_by_day(:created_at).count 
+.chart-index
+  h3 = t(".theater")
+  = column_chart OrderItem.group_by_day(:created_at, last: 15).count
+.chart-index
+  h3 = t(".movie")
+  = line_chart Movie.group_by_week(:created_at, last: 8).count 

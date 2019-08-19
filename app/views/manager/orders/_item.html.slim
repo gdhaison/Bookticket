@@ -1,0 +1,17 @@
+tr
+  td
+    = order.order_items.first.movie_theater.movie.name
+  td
+    = order.order_items.first.movie_theater.room.name
+  td
+    = order.order_items.first.movie_theater.time.strftime("%H:%M, %d/%m/%Y")
+  td
+    - order.order_items.each do |ot|
+      | #{ot.seat.name} 
+  td
+    = order.total
+  td
+    - if !order.image.nil?
+      = image_tag order.image.url
+    - else
+      = t(".pay")

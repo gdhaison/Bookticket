@@ -1,0 +1,5 @@
+$("#category").DataTable().clear().destroy();
+$("#category-body").html("<%= j render partial: "category", collection: @categories %>");
+$("#categoryModalEdit").modal("hide");
+initDataTableCategory();
+toastr["success"]('<%= t(".success") %>');

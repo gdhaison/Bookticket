@@ -1,0 +1,9 @@
+var options = $(rooms).filter("optgroup[label='<%=@theater.name%>']").html()
+if (options != "") {
+  $('#movie_theater_room_id').html(options)
+  $('#movie_theater_room_id').parent().show()
+}
+else {
+  $('#movie_theater_room_id').empty()
+  $('#movie_theater_room_id').parent().hide() 
+}

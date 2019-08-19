@@ -1,0 +1,21 @@
+.container
+  h1
+    | List room
+  table.table
+    thead
+      tr
+        th
+          = t".id"
+        th
+          = t ".nor"
+        th
+          = t".theater"
+        th
+          = t".city"
+        th
+          = t".action"
+    tbody#room-body
+      = render partial: "room", collection: @rooms, as: :room
+  = link_to t(".create"), new_manager_room_path, remote: true, class: "btn btn-primary"
+= paginate @rooms, theme: "twitter-bootstrap-4"
+#roomModal

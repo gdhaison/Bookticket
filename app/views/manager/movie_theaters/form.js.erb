@@ -1,0 +1,12 @@
+$("#mv-form").html("<%= j render 'form', smt: @support_movie_theater, abc: @theater%>")
+var options = $(rooms)
+if (options != "") {
+  $('#movie_theater_room_id').html(options)
+  $('#movie_theater_room_id').parent().show()
+}
+else {
+  $('#movie_theater_room_id').empty()
+  $('#movie_theater_room_id').parent().hide()
+}
+myGetrooms(rooms);
+jQuery('#datetimepicker').datetimepicker({allowTimes:[]});

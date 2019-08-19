@@ -1,0 +1,3 @@
+$("#room-body").html("<%= j render partial: "room", collection: @rooms %>");
+$("#roomModalNew").modal("hide");
+toastr["success"]('<%= t(".success") %>');

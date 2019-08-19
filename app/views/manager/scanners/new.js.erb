@@ -1,0 +1,25 @@
+$("#myReader").html("<%= j render 'new' %>");
+$("#scannerModalNew").modal("show");
+$('#reader').html5_qrcode(function(data){
+  $('#beep')[0].play();
+  alert('The order id is '+qrcode.result);
+  $('#reader').html5_qrcode_stop();
+  $.ajax({
+    type: "GET",
+    dataType: "script",
+    url: '/manager/orders/'+qrcode.result,
+    data: {
+      "id": qrcode.result
+    }
+  });
+  },
+  function(error){
+    $('#read_error').html(error);
+  },
+  function(videoError){
+    $('#vid_error').html(videoError);
+  }
+);
+$("#scannerModalNew").on("click", function (){
+  $('#reader').html5_qrcode_stop();
+})

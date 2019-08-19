@@ -1,0 +1,20 @@
+tr
+  td
+    = order.id
+  td
+    = order.user.name
+  td
+    | #{order.order_items.first.movie_theater.theater.city.name} - #{order.order_items.first.movie_theater.theater.name}
+  td
+    - if order.order_status == false
+      = t(".pending")
+    - else
+      = t(".success")
+  td
+    = order.created_at.utc.localtime.strftime("%d/%m/%Y, %H:%M")
+  td
+    = link_to manager_order_path(order), remote: true, class: "btn btn-info mr-5" do
+      = t(".details") 
+    = link_to manager_order_path(order), remote: true, 
+      method: :delete, class: "btn btn-danger order_delete", data: {confirm: t(".confirm")} do
+      = t(".delete")

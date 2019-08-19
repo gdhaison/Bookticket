@@ -1,0 +1,18 @@
+nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+  ul.navbar-nav.ml-auto
+    li.nav-item.dropdown.no-arrow
+      a#userDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+        = image_tag("bell.png", size: "60", class: "img-profile rounded-circle", id: "img-noti")
+      .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in aria-labelledby="userDropdown" 
+        = render "manager/notifications/notification_center", notifications: notifications
+      = render "manager/notifications/counter", counter: Notification.unread.size
+    .topbar-divider.d-none.d-sm-block#open_notification
+    li.nav-item.dropdown.no-arrow
+      a#userDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+        span.mr-2.d-none.d-lg-inline.text-gray-600.small Administrator
+        = image_tag("admin.png", size: "60", class: "img-profile rounded-circle")
+      .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in aria-labelledby="userDropdown" 
+        a.dropdown-item data-target="#logoutModal" data-toggle="modal" href="#" 
+        - if admin_signed_in?
+          = link_to "#{current_admin.name}", current_admin.name, class: "dropdown-item"
+          = link_to t(".log out"), destroy_admin_session_path, method: :delete, class: "dropdown-item"

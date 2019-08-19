@@ -1,0 +1,34 @@
+#index-city
+  h1 Order
+  .ticket
+    .ticket__content
+      .text-center
+        p 
+          = t(".name") 
+          = @order.user.name
+        p 
+          = t(".email") 
+          = @order.user.email
+      table 
+        tr
+          td = t(".theater")
+          td = @order_items.first.movie_theater.theater.name
+        tr
+          td = t(".room") 
+          td = @order_items.first.movie_theater.room.name
+        tr
+          td = t(".movie")  
+          td = @order_items.first.movie_theater.movie.name
+        tr
+          td = t(".showtime")  
+          td = @order_items.first.movie_theater.time.strftime(Settings.format_time)
+        tr
+          td = t(".seat")  
+          td 
+            - @order.order_items.each do |ot|
+              span = ot.seat.name 
+          end
+        tr
+          td = t(".total")  
+          td = number_to_currency(@order.total)
+      = link_to t(".payment"), billings_path, class: "btn btn-success"

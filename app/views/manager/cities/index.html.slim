@@ -1,0 +1,13 @@
+.container.index-categories
+  h1 = t".title"
+  table.table.table-condensed
+    thead
+      tr
+        th = t ".th1"
+        th = t ".th2"
+    tbody#city-body
+      = render partial: "city", collection: @cities, as: :city
+    table
+      = link_to t(".add"), new_manager_city_path, remote: true, class: "btn btn-success"
+= paginate @cities, theme: "twitter-bootstrap-4"
+#cityModal

@@ -1,0 +1,71 @@
+.email-form
+  table style="border-collapse:collapse;padding:0;margin:0 auto;width:600px"
+    tbody
+      tr
+        td
+          table
+            tr style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:0 1%;margin:0;background:#e1f0f8;border-right:1px dashed #c3ced4;text-align:center;width:58%"
+              = link_to "Ruby Cinemas", "www.ruby-dev.vn"
+      tr
+        td
+          table
+            tbody
+              tr
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:0 1%;margin:0;background:#e1f0f8;border-right:1px dashed #c3ced4;text-align:center;width:58%"
+                  h1 style="font-family:Verdana,Arial;font-weight:700;font-size:16px;margin:1em 0;line-height:20px;text-transform:uppercase;margin-top:25px"
+                    | Thank you for your order from Ruby Cinemas
+                  p style="font-family:Verdana,Arial;font-weight:normal;line-height:20px;margin:1em 0"
+                    | You can check the status of your order by
+                    = link_to " login your account", "localhost:3000/login"
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:2%;margin:0;background:#e1f0f8;width:40%"
+                  h4 style="font-family:Verdana,Arial;font-weight:bold;margin-bottom:5px;font-size:12px;margin-top:13px"
+                    | Order Questions?
+                  p style="font-family:Verdana,Arial;font-weight:normal;line-height:20px;margin:1em 0"
+                    b Call us:  
+                    div style="color:#3696c2;text-decoration:underline;"
+                      = link_to "+84 247-107-7000", "#"
+                    br
+                    b Email:  
+                    div style="color:#3696c2;text-decoration:underline;"
+                      = link_to "no_reply@ruby-dev.vn", "ruby-dev.vn"
+      tr style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:0;margin:0;background:#e1f0f8;text-align:center;width:100%"
+        h3 style="font-family:Verdana,Arial;font-weight:normal;font-size:17px;margin-bottom:10px;margin-top:15px"Your Order: 
+        = image_tag "#{@order.chart}", alt: "qrcode"
+      tr
+        td
+          table style="border-collapse:collapse;padding:10px 15px;margin:0;width:100%"
+            thead
+              tr
+                th style="font-family:Verdana,Arial;font-weight:700;padding:10px 15px;background:#f1f1f1;text-transform:uppercase;text-align:left;font-size:11px" Item in your order
+                th style="font-family:Verdana,Arial;font-weight:700;padding:10px 15px;background:#f1f1f1;text-transform:uppercase;text-align:left;font-size:11px" Theater/Room
+                th style="font-family:Verdana,Arial;font-weight:700;padding:10px 15px;background:#f1f1f1;text-transform:uppercase;text-align:left;font-size:11px" Showtimes
+                th style="font-family:Verdana,Arial;font-weight:700;padding:10px 15px;background:#f1f1f1;text-transform:uppercase;text-align:left;font-size:11px" Seat
+                th style="font-family:Verdana,Arial;font-weight:700;padding:10px 15px;background:#f1f1f1;text-transform:uppercase;text-align:left;font-size:11px" Total
+            tbody
+              tr
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px;margin:0;border-top:1px solid #ebebeb;text-align:left"
+                  p = @order.order_items.first.movie_theater.movie.name
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px;margin:0;border-top:1px solid #ebebeb;text-align:left"
+                  = @order.order_items.first.movie_theater.theater.name
+                  br
+                  = @order.order_items.first.movie_theater.room.name
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px;margin:0;border-top:1px solid #ebebeb;text-align:left"
+                  = @order.order_items.first.movie_theater.time.strftime("%d/%m/%Y, %H:%M")
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px;margin:0;border-top:1px solid #ebebeb;text-align:left"
+                  - @order.order_items.each do |item|
+                    = item.seat.name
+                    br
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px;margin:0;border-top:1px solid #ebebeb;text-align:left"
+                  = @order.total
+          table style="border-collapse:collapse;padding:0;margin:0;width:100%"
+            tbody
+              tr 
+                td style="font-family:Verdana,Arial;font-weight:normal;border-collapse:collapse;vertical-align:top;padding:10px 15px 0;margin:0;padding-top:10px;text-align:left"
+                  h6 style="font-family:Verdana,Arial;font-weight:700;font-size:12px;margin-bottom:0px;margin-top:5px;text-transform:uppercase" Bill to:
+                  p
+                    p style="font-family:Verdana,Arial;font-weight:normal;line-height:20px;margin:1em 0"
+                      = @user.name
+                    p style="font-family:Verdana,Arial;font-weight:normal;line-height:20px;margin:1em 0"
+                      = @user.address
+                    p style="font-family:Verdana,Arial;font-weight:normal;line-height:20px;margin:1em 0"
+                      = @user.phone_number

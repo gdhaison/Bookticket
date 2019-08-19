@@ -1,0 +1,410 @@
+en:
+  layouts:
+    header:
+      web_name: "RubyDevCinema"
+      menu: "Menu"
+      profile: "Profile"
+      option: "Option"
+      history: "Transaction history"
+      signin: "Log in"
+      city: "Cities"
+      search: "Search..."
+      logout: "Log out"
+    footer:
+      get: "Get in Touch"
+      live: "Chat live"
+      social: "Get social"
+  
+  orders:
+    show:
+      name: "Name : "
+      email: "Email : "
+      theater: "Theater : "
+      showtime: "Showtime : "
+      seat: "Seat : "
+      payment: "Payment"
+      movie: "Movie : "
+      total: "Total : "
+      room: "Room : "
+    index:
+      title: "Transactions history"
+      view: "View"
+    new:
+      booking: "Booking"
+      title: "Booking online"
+      screen: "Screen"
+      lblChecked: "Checked"
+      lblFree: "Free"
+      lblPicked: "Picked"
+  user_mailer:
+    welcome_send:
+      user: "User Profile"
+      welcome: "Welcome to my site"
+    mail_month:
+      title: "Movie of the month"
+      
+  order_mailer:
+    ordered: "You have successfully ordered"
+    order_mail: 
+      od: "Tracking_your_order"
+      ordered: "You have successfully ordered"
+      hello: "Hello"
+  static_pages:
+    home:
+      contact: "Contact us on "
+      face: "FaceBook"
+      slogan: "More than a Theater"
+      book: "Book your Ticket now!"
+      city: "City"
+      res_now: "Reserve now"
+      onstage: "Onstage Movies"
+      notice: "All those movies are available now on our theaters"
+    movie:
+      pur: "Book"
+
+  movies:
+    show:
+      director: "Director: "
+      category: "Category: "
+      actor: "Actor: "
+      release: "Release: "
+      rated: "Rated: "
+      descrip: "Description: "
+      trailer: "Trailer"
+      book: "Book Tickets"
+      bok: "Book"
+    index:
+      details: Details
+  
+  users:
+    edit:
+      profile: "Edit Profile"
+      name: "Full name"
+      phone: "Phone number"
+      email: "Email"
+      address: "Address"
+      password: "New password"
+      confirm: "Confirm password"
+      update: "Update"
+    show:
+      edit: "Edit"
+
+  cities:
+    index:
+      city: "Area"
+    show:
+      nil: "There are no theaters in this city yet"
+      cinema: "Rubydev cinema"
+  reviews:
+    form:
+      login: "Login"
+      add: "Add"
+      rate: "You rate"
+      content: "Your review content"
+    review:
+      delete: "Delete"
+      AYS: "Are you sure?"
+      
+  manager:
+    orders:
+      order:
+        pending: "Pending"
+        success: "Success"
+        details: "Details"
+        delete: "Delete"
+      index:
+        name: "User name"
+        city-theater: "City - Theater"
+        status: "Status"
+        time: "Ordered time"
+        action: "Action"
+      show:
+        name: "Movie name"
+        room: "Room"
+        showtime: "Show time"
+        seat: "Seat"
+        total: "Total"
+    users:
+      user:
+        confirm: Block this user
+        sure: Unblock this user
+        lock: Lock
+        unlock: Unlock
+      index:
+        name: Name
+        fulln: Full name
+        email: Email
+        phone: Phone number
+        addr: Address
+        act: Action
+        all: All users
+        
+    theaters:
+      new: 
+        title: "New theater"
+        button: "Create"
+        select: "Select city"
+      index: 
+        all: "All Theaters"
+        new: "New Theater"
+        name: "Theater Name"
+        city: "City"
+        action: "Action"
+      edit: 
+        button: "Update"
+      form:
+        button: "Create"
+      theater:
+        confirm: "Are You Sure ?"
+        edit: "Edit"
+        delete: "Delete"
+      destroy:
+        deleted: "Delete success"
+      create: 
+        success: "Create success"
+      update:
+        success: "Update theater successfully!"
+
+    reviews:
+      index:
+        all: "All review"
+        name: "User Name"
+        content: "Content"
+        rate: "Rate"
+        action: "Action"
+      review:
+        AYS: "Are You Sure?"
+        delete: "Delete"
+
+    categories:
+      category:
+        confirm: "Are you sure ?"
+        delete: "Delete"
+        edit: "Edit"
+      new:
+        title: "Create Category"
+        button: "Create"
+      edit:
+        title: "Edit Category"
+        button: "Update"
+      index:
+        title: "List categories"
+        th1: "Category"
+        th2: "Action"
+        button: "Add category"
+        confirm: "Are you sure ?"
+        import: "Import data"
+        download: "Download as CSV"
+      destroy:
+        success: "Successfully"
+      update:
+        success: "Update category successfully!"
+      create:
+        success: "Create category successfully!"
+      import:
+        success: "Import category successfully!"
+      form: 
+        button: "Create"
+
+    cities:
+      create:
+        success: "Successfully"
+      destroy:
+        success: "Successfully"
+      new:
+        title: "Create City"
+        button: "Create"
+      edit:
+        title: "Edit City"
+        button: "Update"
+      index:
+        title: "List Cities"
+        th1: "City"
+        th2: "Action"
+        edit: "Edit"
+        add: "Add city"
+        delete: "Delete"
+      city: 
+        confirm: "Are you sure ?"
+        delete: "Delete"
+        edit: "Edit"
+      update:
+        success: "Update city successfully!"
+      create:
+        success: "Create city successfully!"
+      form:
+        button: "Create"
+    orders:
+      index:
+        startScan: "Scan"
+      show:
+        qrcode: "QR CODE"
+        total: "Total"
+      item:
+        pay: "Not paid yet"
+      order:
+        confirm: "Are you sure?"
+    scanners:
+      new:
+        titleScanner: "Scan QR code"
+    movie_theaters:
+      new:
+        title: "Create Showtime"
+        button: "Create"
+      form:
+        title: "Showtimes"
+        select-theater: "Select Theater"
+        select-room: "Select Room"
+        button: "Create"
+      index:
+        title: "List Showtimes"
+        time: "Time"
+        theat: "Theaters"
+        mo: "Movies"
+        ro: "Rooms"
+        ac: "Action"
+        add: "Add showtime"
+      movie_theater:
+        confirm: "Are you sure ?"
+        delete: "Delete"
+        edit: "Edit"
+        show: "Show"
+      destroy:
+        success: "Successfully"
+      edit:
+        button: "Update"
+      update:
+        success: "Update showtime successfully!"
+      create:
+        success: "Create showtime successfully!"
+      show:
+        status: "Available"
+
+
+    movies:
+      new:
+        title: "Create new Movies"
+        success: "Success"
+        fails: "Fail"
+      form:
+        name: "Name"
+        director: "Director"
+        actor: "Actor"
+        release: "Release"
+        rated: "Rated: "
+        trailer: "Trailer"
+        descrip: "Descripetion"
+        image: "Image"
+        select: "Select a category"
+        create: "Create a new Movie"
+        aivailable: "Available"
+      index: 
+        name: "Name"
+        category: "Category"
+        created_at: "Create at"
+        image: "Image"
+        update: "Update"
+        delete: "Delete"
+        new_movie: "New Movie"
+      edit:
+        button: "Update Movie"
+      new:
+        button: "Create a Movie"
+      movie:
+        confirm: "Are you sure"
+        delete: "Delete"
+        update: "Update"
+        trailer: "Trailer"
+      destroy:
+        success: "Successfully"
+
+    shared:
+        create_movie: "Create Movie"
+        success: "Successfully"
+    rooms:
+      create:
+        success: "Success"
+        failed: "Failed"
+      update:
+        success: "Success"
+        failed: "Failed"
+      destroy:
+        success: "Success"
+      index:
+        title: "List room"
+        id: "ID"
+        nor: "Name of Room"
+        theater: "Theater"
+        city: "City"
+        action: "Action"
+        delete: "Delete"
+        create: "Create room"
+      edit:
+        update: "Update"
+        edt-room: "Edit room"
+        button: "Submit"
+      new:
+        title: "Create Room"
+        button: "Create"
+      form:
+        title: "Create Room"
+        button: "Create"
+      show:
+        greeting: "Show room %{room} of %{theater} theater"
+        index: "Back to index"
+      room:
+        confirm: "Are you sure"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+
+    static_pages:
+      index:
+        user: "Users register"
+        theater: "Revenue all theaters of day"
+        movie: "New movies of week"
+
+  movie_theaters:
+    show:
+      name: "Name: "
+      category: "Category: "
+      rate: "Rated: "
+      room: "Room: "
+      trailer: "Trailer"
+      ticket: "Book tickets"
+  billings:
+    index:
+      wel: "Welcome"
+      pay: "Do you want to pay ?"
+      let: "Let's go"
+    success:
+      name: "Name: "
+      email: "Email: "
+      movie: "Movie: "
+      showtime: "Showtime: "
+      seat: "Seat: "
+      total: "Total: "
+      pay: "Payment"
+      success: "You successfully linked a credit card to your account"
+    payment:
+      success: "Success"
+
+  importfile:
+    imports:
+      create:
+        success: "Import successfully !"
+        invalid: "Invalid CSV file format"
+        empty: "No File Chosen"
+        
+  comments:
+    comment:
+      add: "Add by "
+      on: " on "
+      reply: "Reply "
+    new:
+      comment: "Comment"
+      btn: "Add Comment"
+    reply_new:
+      btn: "Add Reply"
+      reply: "Reply"
+

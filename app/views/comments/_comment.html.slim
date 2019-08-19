@@ -1,0 +1,25 @@
+- if user_signed_in?
+  .container1
+    p.text-muted
+      = t(".add")
+      strong
+        = comment.user.name
+        = t(".on")
+      = l(comment.created_at, format: '%B, %d %Y %H:%M:%S')
+    blockquote
+      p
+        = simple_format(comment.content)
+      = link_to t(".reply"),reply_new_path(comment: comment.id, movie: @movie.id), remote: true
+    - @support.find_reply(@support.comment_id(@support.find_comment(@movie))).each do |reply|
+      - if reply.parent_id == comment.id
+        .comment_nested
+          p.text-muted
+            = t ".reply"
+            strong
+              = reply.user.name
+            |  on
+            = l(reply.created_at, format: '%B, %d %Y %H:%M:%S')
+          blockquote
+            p
+              = simple_format(reply.content)
+

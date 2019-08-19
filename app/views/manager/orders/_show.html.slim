@@ -1,0 +1,25 @@
+#myModalNew.modal.fade.bd-example-modal-lg aria-hidden="true" aria-labelledby="myLargeModalLabel" role="dialog" tabindex="-1"
+   .modal-dialog.modal-dialog-centered.modal-lg
+    .modal-content.center
+      .modal-header
+        h1 Order info: #{@order.id}
+        button#close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  ×
+      .modal-body
+        table.table
+          thead
+            tr
+              th style="width: 30%;"
+                = t(".name") 
+              th style="width: 15%;"
+                = t(".room")
+              th style="width: 24%;"
+                = t(".showtime")
+              th style="width: 20%;"
+                = t(".seat")
+              th style="width: 20%;"
+                = t(".total")
+              th style="width: 20%;"
+                = t(".qrcode")
+          tbody
+            = render "item", order: @order

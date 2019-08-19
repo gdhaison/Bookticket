@@ -1,0 +1,11 @@
+Style/FrozenStringLiteralComment:
+  Description: "Avoid Frozen String Literal Comment"
+  Enabled: false
+
+Bundler/OrderedGems:
+  Description: "Avoid ordered gems"
+  Enabled: false
+
+Style/Documentation:
+  Description: "Document classes and non-namespace modules."
+  Enabled: false

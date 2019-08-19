@@ -1,0 +1,3 @@
+$("#movie-body").html("<%= j render partial: 'movie', collection: @movies %>");
+$("#myModalNew").modal("hide");
+toastr["success"]('<%= t(".success") %>');

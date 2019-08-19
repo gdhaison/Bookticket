@@ -1,0 +1,14 @@
+#index-city.payment 
+  .row
+    .col-md-12.mt-4.text-center
+      h1 
+        = t ".wel"
+        | &ensp;
+        = current_user.name
+  .row
+    h2.col-md-12.mt-5.text-center
+      = t ".pay"
+  .row
+    .col-md-12.mt-4.text-center
+      = form_tag create_payment_method_path, id: "billing-create-payment-method" do
+        = link_to t(".let"), add_payment_method_path, remote: true, class: "btn btn-primary"

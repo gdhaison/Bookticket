@@ -1,0 +1,17 @@
+= provide(:button_text, t(".button"))
+.modal-header
+  h2= t(".title")
+  button#close aria-label="Close" data-dismiss="modal" type="button"
+    span aria-hidden="true"
+      i.fas.fa-times
+.modal-body.col-md-6.col-md-offset-3
+  = form_for [:manager, @room], html: { autocomplete: "off" }, remote: true do |f|
+    = render "shared/error_messages", object: f.object
+    = f.label :theater
+    br
+    .box-select
+      = f.grouped_collection_select :theater_id, @supports.cities, :theaters, :name, :id, :name
+    br
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+    = f.submit yield(:button_text), class: "btn btn-primary"

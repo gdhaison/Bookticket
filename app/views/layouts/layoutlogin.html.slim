@@ -1,0 +1,8 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    = stylesheet_link_tag "manager/application", media: "all", "data-turbolinks-track": "reload"
+    = javascript_include_tag "manager/application", "data-turbolinks-track": "reload"
+  body
+    = yield

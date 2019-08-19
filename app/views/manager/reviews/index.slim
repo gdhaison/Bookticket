@@ -1,0 +1,21 @@
+.container-fluid
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        = t(".all")
+row
+  .col-sm-12
+    table.table.table-striped
+      thead
+        tr[role="row"]
+          th.sorting_asc[style="width: 20px;"]
+            = t(".name")
+          th.sorting[style="width: 70px;"]
+            = t(".rate")
+          th.sorting[style="width: 70px;"]
+            = t(".action")
+      tbody 
+        = render @reviews
+  .col-sm-12.col-md-7
+    #dataTable_paginate.dataTables_paginate.paging_simple_numbers
+      = paginate @reviews

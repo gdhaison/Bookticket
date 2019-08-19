@@ -1,0 +1,11 @@
+- if user_signed_in?
+  = form_for @support.new_comment, remote: true do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :movie_id, value: @movie.id
+    center
+      = f.label :Comment, t(".comment")
+      .form-group
+        = f.text_area :content, class: "form-comment",id: "content-cmt", required: true
+    center
+      .btn-cmt
+        = f.submit t(".btn"), class: "btn btn-primary"

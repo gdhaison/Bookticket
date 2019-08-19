@@ -1,0 +1,12 @@
+= form_for [:manager, @theater], remote: true do |f|
+  = render "shared/error_messages", object: f.object
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :city
+    br
+    = f.select(:city_id, options_from_collection_for_select(City.all, :id, :name), include_blank: t(".select"))
+  .form-group
+    = f.submit t(".button"), id: "create", remote: true, class: "btn btn-info add-new-theater"
+    br

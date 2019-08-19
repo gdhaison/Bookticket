@@ -1,0 +1,8 @@
+- @dates.each do |date|
+  .col-md-2
+      .card
+        = link_to date, {controller: "static_pages", 
+                         action: "show_city", 
+                         movie: @movie.id, 
+                         date: date}, 
+                         remote: true, class: "btn btn-light text-muted date"

@@ -1,0 +1,9 @@
+- if user_signed_in? && @review != nil
+  #reviews.woocommerce-Reviews
+    ol.commentlist
+      li#li-comment-43.review.even.thread-even.depth-1
+        #comment-43.comment_container
+          p.meta
+            strong.woocommerce-review__author = "Your ration"
+          .comment-text
+            .star-rating data-score= review.rate

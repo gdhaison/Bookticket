@@ -1,0 +1,18 @@
+#cityModalEdit.modal.fade aria-hidden="true" aria-labelledby="myLargeModalLabel" role="dialog" 
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h2= t(".title")
+        button#close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  
+            i.fas.fa-times
+      .modal-body
+        = form_for [:manager, @city], remote: true do |f|
+          = render "shared/error_messages", object: f.object
+          .form-group
+            = f.label :name
+            = f.text_field :name, class: "form-control"
+          .form-group
+            = f.submit t(".button"), id: "update", remote: true, class: "btn btn-info"
+            br
+

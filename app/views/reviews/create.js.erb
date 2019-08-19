@@ -1,0 +1,9 @@
+$("#review-form").html("");
+$("#show_rate").html("<%= j(render partial: 'reviews/review', collection: @support.rate(@movie,current_user), as: :review) %>");
+$('.star-rating').raty({
+  path: '/assets/',
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});

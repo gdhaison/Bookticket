@@ -1,0 +1,20 @@
+- if user_signed_in? 
+  - if !(current_user.reviews.find_by movie_id: @movie.id)
+    .container
+      #reviews.woocommerce-Reviews
+        #review_form_wrapper
+          #review_form
+            #respond.comment-respond
+              = form_for review,remote: true, id:"commentform", class: "comment-form" do |f|
+                = f.hidden_field :movie_id, value: @movie.id
+                .field
+                  = f.label :rate, t(".rate")
+                  #star-rating
+                  = f.submit t(".add"), class: "submit form-submit"
+        .clear
+          br
+- else
+  .container
+    p Please login to review
+    = link_to t(".login"), new_user_session_path, class:"btn btn-danger"  
+  br

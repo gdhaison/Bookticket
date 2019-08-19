@@ -1,0 +1,8 @@
+#index-city
+  .city-info
+    .card.d-none.d-sm-block
+      h2 = t(".city") 
+    = render partial: "city", collection: @cities, as: :city
+  br
+  .theater-info
+    #theaters
