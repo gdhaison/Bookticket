@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   resources :movie_theaters, only: [:show]
   resources :reviews, only: [:create, :destroy]
   resources :billings, only: [:index]
+  resources :test
 
   require 'sidekiq/web'
   mount Sidekiq::Web => "/sidekiq"
