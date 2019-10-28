@@ -19,7 +19,9 @@ class Order < ApplicationRecord
   end
 
   def order_email_send
-    OrderWorker.perform_async(self.user_id, self.id)
+    order = Order.find self.id
+    current_user = User.find self.user_id
+    OrderMailer.order_mail(order, current_user).deliver_now if current_user.present?
   end
 
   def generate_qr

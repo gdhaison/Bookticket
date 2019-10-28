@@ -41,8 +41,9 @@ class BillingsController < ApplicationController
     order.order_status = true
     order.chart = order.generate_qr
     order.save
-    # OrderMailer.order_mail(order, current_user).deliver_now if current_user.present?
-    order.order_email_send
+    OrderMailer.order_mail(order, current_user).deliver_now if current_user.present?
+    #order.order_email_send
+    #OrderWorker.perform_async(current_user.id, order.id)
     qr_code_img = RQRCode::QRCode.new(order.id.to_s, level: :h).to_img.resize(200, 200)
     order.update_attribute :image, qr_code_img.to_string
     paid_seats = order.order_items.first.movie_theater.showtime_seats

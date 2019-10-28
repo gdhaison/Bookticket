@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    @search = Movie.ransack(params[:q])
+    @search = Movie.ransack
   end
 
   def after_sign_in_path_for resource

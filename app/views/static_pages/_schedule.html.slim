@@ -12,8 +12,8 @@
                   = image_tag movie.image.url  
               - else 
                 = image_tag "https://i.moveek.com/media/resized/mini/5ce54954bcd15926201453.jpg"
-        .col.ml-n2
-          a href="/phim/spider-man-2-far-from-home/" 
+        .col.ml-n2 
+          = link_to movie
             | #{movie.name}
           p.card-text.small.text-muted.mb-0
             | #{movie.rated} ·
